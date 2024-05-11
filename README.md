@@ -94,9 +94,12 @@ Para resolver isso vamos usar o pacote [intl_util](https://pub.dev/packages/intl
 > [!NOTE]  
 > A implementação dessa abordagem está na branch: `flutter_util`
 
+> [!Tip]  
+> Utlize a extensão Flutter Intl do (VS Code)[https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl] ou (Android Studio)[https://plugins.jetbrains.com/plugin/13666-flutter-intl] para ter as mudanças refletidas no seu seu código automaticamente.
 
 
-### 1. instalação 
+
+### 1. Instalação 
 
 ```
 dart pub add intl_utils
@@ -111,7 +114,54 @@ flutter pub global activate intl_utils
 Execute o comando para gerar os arquivos:
 
 ```
-flutter pub run intl_utils:generate
+dart run intl_utils:generate
 ```
+
+### 2. Atualizar o pubspec.yaml
+
+```yaml
+flutter_intl:
+  enabled: true
+  arb_dir: lib/l10n/idiomas
+  output_dir: lib/l10n/
+```
+
+### 3. Atualize o MaterialApp
+
+```dart
+return MaterialApp(
+      title: 'Localizations Sample App',
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      home: const FirstPage(),
+    );
+```
+
+### 4. Atualize a AppLocalizationsExtension
+
+
+**Antes**
+
+```dart
+extension AppLocalizationsExtension on BuildContext {
+  get intl => AppLocalizations.of(this)!;
+}
+```
+
+**Depois**
+
+```dart
+extension AppLocalizationsExtension on BuildContext {
+  S get intl => S.of(this);
+}
+```
+
+
+
 
 
