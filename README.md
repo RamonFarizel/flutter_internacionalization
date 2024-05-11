@@ -32,7 +32,7 @@ preferred-supported-locales: [en, pt_BR]
 ### 3. Criar os arquivos `.arb`
 exemplo: `app_en.arb`, `app_pt.arb` `app_pt_br.arb`
 
-> [!Atenção]  
+> [!Warning]  
 > no caso do PT BR precisamos incluir um arquivo de fallback `app_pt.arb`.
 
 ```json
@@ -85,13 +85,16 @@ AppBar(
       ),
 ```
 
----
+# Pacote auxiliar
 
-## Pacote auxiliar
-
-Na abordagem anterior temos uma desvantagem. Os arquivos de `l10n` não são gerados automaticamente, o que nos força a rodar os comandos da `etapa 4` todas as vezes em que algo é altedado.
+Na abordagem anterior temos uma desvantagem. Os arquivos de `l10n` não são gerados automaticamente, o que nos força a rodar os comandos da `etapa 4` todas as vezes em que algo é alterado.
 
 Para resolver isso vamos usar o pacote [intl_util](https://pub.dev/packages/intl_utils/install)
+
+> [!NOTE]  
+> A implementação dessa abordagem está na branch: `flutter_util`
+
+
 
 ### 1. instalação 
 
