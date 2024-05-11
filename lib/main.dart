@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_intl_sample/l10n/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,11 +12,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: FirstPage(),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      home: const FirstPage(),
     );
   }
 }
@@ -38,5 +43,5 @@ class FirstPage extends StatelessWidget {
 }
 
 extension AppLocalizationsExtension on BuildContext {
-  AppLocalizations get appIntl => AppLocalizations.of(this)!;
+  S get appIntl => S.of(this);
 }
