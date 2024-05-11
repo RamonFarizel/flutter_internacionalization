@@ -162,6 +162,12 @@ extension AppLocalizationsExtension on BuildContext {
 ```
 
 
+> [!TIP]
+> Atualize o `.gitignore` para não subir os arquivos gerados.
+> `**/generated/` 
+
+
+
 
 
 
