@@ -35,8 +35,26 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.appIntl.helloWorld),
       ),
-      body: Center(
-        child: Text(context.appIntl.helloWorld),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(context.appIntl.helloWorld),
+            Text(
+              context.appIntl.hello('Ramon'),
+            ),
+            Text(
+              context.appIntl.nWombats(1),
+            ),
+            Text(
+              context.appIntl.pronoun('male'),
+            ),
+            Text(
+              context.appIntl.numberOfDataPoints(2),
+            ),
+          ],
+        ),
       ),
     );
   }

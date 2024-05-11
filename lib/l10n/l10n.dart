@@ -50,13 +50,63 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hello World`
+  /// `Hello World!`
   String get helloWorld {
     return Intl.message(
-      'Hello World',
+      'Hello World!',
       name: 'helloWorld',
-      desc: 'message',
+      desc: 'The conventional newborn programmer greeting',
       args: [],
+    );
+  }
+
+  /// `Hello {userName}`
+  String hello(String userName) {
+    return Intl.message(
+      'Hello $userName',
+      name: 'hello',
+      desc: 'A message with a single parameter',
+      args: [userName],
+    );
+  }
+
+  /// `{count, plural, =0{no wombats} =1{1 wombat} other{{count} wombats}}`
+  String nWombats(num count) {
+    return Intl.plural(
+      count,
+      zero: 'no wombats',
+      one: '1 wombat',
+      other: '$count wombats',
+      name: 'nWombats',
+      desc: 'A plural message',
+      args: [count],
+    );
+  }
+
+  /// `{gender, select, male{he} female{she} other{they}}`
+  String pronoun(String gender) {
+    return Intl.gender(
+      gender,
+      male: 'he',
+      female: 'she',
+      other: 'they',
+      name: 'pronoun',
+      desc: 'A gendered message',
+      args: [gender],
+    );
+  }
+
+  /// `Number of data points: {value}`
+  String numberOfDataPoints(int value) {
+    final NumberFormat valueNumberFormat = NumberFormat.compactCurrency(
+        locale: Intl.getCurrentLocale(), decimalDigits: 2);
+    final String valueString = valueNumberFormat.format(value);
+
+    return Intl.message(
+      'Number of data points: $valueString',
+      name: 'numberOfDataPoints',
+      desc: 'A message with a formatted int parameter',
+      args: [valueString],
     );
   }
 }
@@ -67,6 +117,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'pt'),
     ];
   }
 
