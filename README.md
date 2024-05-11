@@ -87,12 +87,12 @@ AppBar(
 
 # Pacote auxiliar
 
+> [!NOTE]  
+> A implementação dessa abordagem está na branch: `flutter_util`
+
 Na abordagem anterior temos uma desvantagem. Os arquivos de `l10n` não são gerados automaticamente, o que nos força a rodar os comandos da `etapa 4` todas as vezes em que algo é alterado.
 
 Para resolver isso vamos usar o pacote [intl_util](https://pub.dev/packages/intl_utils/install)
-
-> [!NOTE]  
-> A implementação dessa abordagem está na branch: `flutter_util`
 
 > [!Tip]  
 > Utlize a extensão Flutter Intl do [VS Code](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) ou [Android Studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) para ter as mudanças refletidas no seu seu código automaticamente.
