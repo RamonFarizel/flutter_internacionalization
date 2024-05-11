@@ -95,7 +95,7 @@ Para resolver isso vamos usar o pacote [intl_util](https://pub.dev/packages/intl
 > A implementação dessa abordagem está na branch: `flutter_util`
 
 > [!Tip]  
-> Utlize a extensão Flutter Intl do (VS Code)[https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl] ou (Android Studio)[https://plugins.jetbrains.com/plugin/13666-flutter-intl] para ter as mudanças refletidas no seu seu código automaticamente.
+> Utlize a extensão Flutter Intl do [VS Code](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) ou [Android Studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) para ter as mudanças refletidas no seu seu código automaticamente.
 
 
 
