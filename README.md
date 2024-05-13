@@ -86,6 +86,8 @@ AppBar(
       ),
 ```
 
+---
+
 # Pacote auxiliar
 
 > [!NOTE]  
@@ -167,8 +169,11 @@ extension AppLocalizationsExtension on BuildContext {
 > Atualize o `.gitignore` para não subir os arquivos gerados:
 > `**/generated/` 
 
+---
+# Arquivos .ARB 
+Recomendo dar uma olhada nos arquivos [.arb](lib/l10n/app_en.arb).
+Agrupei alguns exemplos interessantes da documentação.
 
-
-
+Também é possível fazer uso do [ARB Editor](https://marketplace.visualstudio.com/items?itemName=Google.arb-editor) para facilitar na escrita e na verificação da sintaxe.
 
 
