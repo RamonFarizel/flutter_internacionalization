@@ -4,7 +4,7 @@
 Implementando a internacionalização da sua aplicação flutter.
 Exemplo baseado na [documentação oficial](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization).
 
-### 1. Adicionar os pacotes.
+### 1. Adicione os pacotes.
 
 ```
 flutter pub add flutter_localizations --sdk=flutter
@@ -12,7 +12,7 @@ flutter pub add flutter_localizations --sdk=flutter
 flutter pub add intl:any
 ```
 
-### 2. Adicionando as configurações necessárias:
+### 2. Adicione as configurações necessárias:
 
 **2.1** `Pubspec.yaml`:
 ```
@@ -29,7 +29,7 @@ output-localization-file: app_localizations.dart
 preferred-supported-locales: [en, pt_BR]
 ```
 
-### 3. Criar os arquivos `.arb`
+### 3. Crie os arquivos `.arb`
 exemplo: `app_en.arb`, `app_pt.arb` `app_pt_br.arb`
 
 > [!Warning]  
@@ -44,22 +44,23 @@ exemplo: `app_en.arb`, `app_pt.arb` `app_pt_br.arb`
 }
 ```
 
-### 4 - Gerando os arquvios
+### 4 - Gere os arquivos
 
 Aqui temos 3 opções diferentes para gerar os arquivos:
 
 `flutter pub get`, `flutter run` ou `flutter gen-l10n`
 
 
-### 5 Ajustando o MaterialApp
+### 5 Atualize o MaterialApp
 
 ```dart
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const MaterialApp(
-  title: 'Localizations Sample App',
+  title: 'Exemplo Internacionalização',
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
+  home: const FirstPage(),
 );
 ```
 
@@ -117,7 +118,7 @@ Execute o comando para gerar os arquivos:
 dart run intl_utils:generate
 ```
 
-### 2. Atualizar o pubspec.yaml
+### 2. Atualize o pubspec.yaml
 
 ```yaml
 flutter_intl:
@@ -130,7 +131,7 @@ flutter_intl:
 
 ```dart
 return MaterialApp(
-      title: 'Localizations Sample App',
+      title: 'Exemplo Internacionalização',
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -149,7 +150,7 @@ return MaterialApp(
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get intl => AppLocalizations.of(this)!;
+  get appIntl => AppLocalizations.of(this)!;
 }
 ```
 
@@ -157,10 +158,14 @@ extension AppLocalizationsExtension on BuildContext {
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  S get intl => S.of(this);
+  S get appIntl => S.of(this);
 }
 ```
 
+
+> [!TIP]
+> Atualize o `.gitignore` para não subir os arquivos gerados:
+> `**/generated/` 
 
 
 
