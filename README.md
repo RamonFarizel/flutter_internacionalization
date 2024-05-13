@@ -76,7 +76,7 @@ Podemos facilitar um pouco a escrita criando uma `extension` para o `BuildContex
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get intl => AppLocalizations.of(this)!;
+  AppLocalizationsExtension get intl => AppLocalizations.of(this)!;
 }
 ```
 
@@ -85,6 +85,8 @@ AppBar(
         title: Text(context.appIntl.helloWorld),
       ),
 ```
+
+---
 
 # Pacote auxiliar
 
@@ -150,7 +152,7 @@ return MaterialApp(
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get appIntl => AppLocalizations.of(this)!;
+  AppLocalizations get appIntl => AppLocalizations.of(this)!;
 }
 ```
 
@@ -167,6 +169,11 @@ extension AppLocalizationsExtension on BuildContext {
 > Atualize o `.gitignore` para não subir os arquivos gerados:
 > `**/generated/` 
 
+---
+# Arquivos .ARB 
+Recomendo dar uma olhada nos arquivos [.arb](lib/l10n/app_en.arb).
+Agrupei alguns exemplos interessantes da documentação.
 
+Também é possível fazer uso do [ARB Editor](https://marketplace.visualstudio.com/items?itemName=Google.arb-editor) para facilitar na escrita e na verificação da sintaxe.
 
 
