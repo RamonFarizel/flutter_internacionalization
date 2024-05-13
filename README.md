@@ -57,9 +57,10 @@ Aqui temos 3 opções diferentes para gerar os arquivos:
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const MaterialApp(
-  title: 'Localizations Sample App',
+  title: 'Exemplo Internacionalização',
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
+  home: const FirstPage(),
 );
 ```
 
@@ -130,7 +131,7 @@ flutter_intl:
 
 ```dart
 return MaterialApp(
-      title: 'Localizations Sample App',
+      title: 'Exemplo Internacionalização',
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -149,7 +150,7 @@ return MaterialApp(
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get intl => AppLocalizations.of(this)!;
+  get appIntl => AppLocalizations.of(this)!;
 }
 ```
 
@@ -157,7 +158,7 @@ extension AppLocalizationsExtension on BuildContext {
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  S get intl => S.of(this);
+  S get appIntl => S.of(this);
 }
 ```
 
