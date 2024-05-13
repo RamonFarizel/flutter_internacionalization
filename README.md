@@ -76,7 +76,7 @@ Podemos facilitar um pouco a escrita criando uma `extension` para o `BuildContex
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get intl => AppLocalizations.of(this)!;
+  AppLocalizationsExtension get intl => AppLocalizations.of(this)!;
 }
 ```
 
@@ -152,7 +152,7 @@ return MaterialApp(
 
 ```dart
 extension AppLocalizationsExtension on BuildContext {
-  get appIntl => AppLocalizations.of(this)!;
+  AppLocalizations get appIntl => AppLocalizations.of(this)!;
 }
 ```
 
